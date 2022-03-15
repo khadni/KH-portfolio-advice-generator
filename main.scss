@@ -1,19 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800);
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
-
 // ---- COLORS -------
 
 $lightCyan: hsl(193, 38%, 86%);
@@ -22,7 +8,114 @@ $grayishBlue: hsl(217, 19%, 38%);
 $darkGrayishBlue: hsl(217, 19%, 24%);
 $darkBlue: hsl(218, 23%, 16%);
 
+// ------------------
+
+$smallspace: 35px;
+
+// ------------------
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-size: 28px;
   font-family: "Manrope", sans-serif;
+  background-color: $darkBlue;
+}
+
+.advice-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 600px;
+  height: 425px;
+  background-color: $darkGrayishBlue;
+  border-radius: 15px;
+  padding: 50px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+  &__ID {
+    color: $neonGreen;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    padding-bottom: $smallspace;
+  }
+
+  &__advice {
+    color: $lightCyan;
+    text-align: center;
+    padding-bottom: $smallspace;
+    font-weight: 500;
+  }
+
+  &__divider {
+  }
+
+  &__dice img {
+    position: absolute;
+    bottom: -75px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px;
+    background-color: $neonGreen;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+    &:hover {
+      box-shadow: $neonGreen 0px 10px 30px 0px;
+    }
+  }
+}
+
+.footer {
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0;
+
+  &__attribution {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  &__attribution a {
+    color: hsl(228, 45%, 44%);
+
+    &:hover {
+      color: $darkBlue;
+    }
+  }
+}
+
+// --- MEDIAS -----
+
+@media only screen and (max-width: 630px) {
+  .advice-box {
+    width: 375px;
+    height: 600px;
+  }
+
+  .advice-box__divider {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 630px) {
+  .advice-box__divider-mobile {
+    display: none;
+  }
 }
